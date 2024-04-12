@@ -19,6 +19,12 @@ This code is based on pytorch.
 - scikit-image
 - pandas
 
+## 
+You can use the following command to generate a heatmap illustrating the correlation between different phenotypes in your dataset.
+```bash
+python picture.py
+```
+
 ## Run and test
 
 ```bash
