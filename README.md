@@ -22,16 +22,7 @@ This code is based on pytorch.
 ## Run and test
 
 ```bash
-python attack.py --patch_type grid --lines 3 --box_scale 1.0
-python attack.py --patch_type grid --lines 2 --box_scale 1.0
-python attack.py --patch_type grid --lines 1 --box_scale 1.0
-
-
-python attack.py --patch_type astroid
+python mmoe_maize_1404.py
 ```
 
-## Run ensemble algorithm
-```bash
-python ensemble.py
-```
 
