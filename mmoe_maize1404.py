@@ -36,12 +36,17 @@ label_cols = [ 'dta']
 
 task_num = len(label_cols)
 used_cols = [col for col in col_names if col not in ['ph', 'knpe','kwpe', 'dta']]
-x_train, y_train = {name: train[name].values[:] for name in used_cols}, train[label_cols].values[:]
 x_test, y_test = {name: test[name].values[:] for name in used_cols}, test[label_cols].values[:]
+x_train_full, y_train_full = {name: train[name].values[:] for name in used_cols}, train[label_cols].values[:]
+x_train, x_val, y_train, y_val = train_test_split(x_train_full, y_train_full, test_size=0.2, random_state=SEED)
 
+# Prepare data generators for train, validation, and test sets
 dg = DataGenerator(x_train, y_train)
-train_dataloader, val_dataloader, test_dataloader = dg.generate_dataloader( x_val=x_test, y_val=y_test, 
-                                      x_test=x_test, y_test=y_test, batch_size=640)
+train_dataloader, val_dataloader, test_dataloader = dg.generate_dataloader(
+    x_val=x_val, y_val=y_val, 
+    x_test=x_test, y_test=y_test, 
+    batch_size=640
+)
 
 feature = [DenseFeature(col) for col in used_cols]#,"regression","regression"
 task_types = ["regression"] * task_num
