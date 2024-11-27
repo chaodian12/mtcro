@@ -4,7 +4,7 @@ This is the code for the paper 'MtCro: Multi-task deep learning framework improv
 
 ## Data preparation
 
-We provide a dataset template in the SNP_pca folder. You can use this template to process your own folder in a similar manner.
+We provide a dataset template in the folder. You can use this template to process your own folder in a similar manner.
 
 ## Requirements
 
@@ -28,7 +28,10 @@ python picture.py
 ## Run and test
 
 ```bash
-python mmoe_maize_1404.py
+python mtcro_maize_train.py
 ```
+## Datasets
+
+For Maize8652 datasets, go to [Maize8652](https://pan.baidu.com/s/1Jw2IWBMm-QYrfk0fOfXVUg)
 
 
